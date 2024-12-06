@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artistes",
+  "info": {
+    "singularName": "artiste",
+    "pluralName": "artistes",
+    "displayName": "Artistes"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nom": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "Galerie": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "categorie": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::categorie.categorie",
+      "mappedBy": "artiste"
+    }
+  }
+}
